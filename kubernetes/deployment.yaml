@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trend-static-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trend-static-app
+  template:
+    metadata:
+      labels:
+        app: trend-static-app
+    spec:
+      containers:
+      - name: trend-static-app
+        image: akashvb/trend-static-app:latest
+        ports:
+        - containerPort: 80
